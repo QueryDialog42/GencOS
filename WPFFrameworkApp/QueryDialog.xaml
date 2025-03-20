@@ -1,0 +1,27 @@
+﻿<Window x:Class="WPFFrameworkApp.QueryDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFFrameworkApp"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Title="QueryDialog" Height="103" Width="285">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Image x:Name="ImageIcon" Width="50" Grid.RowSpan="2" />
+
+        <!-- Prompt Label -->
+        <TextBlock x:Name="QueryMessage" Grid.Row="0" Grid.Column="1"/>
+        
+        <!-- Buttons -->
+        <StackPanel x:Name="ButtonPanel" Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" />
+    </Grid>
+</Window>

@@ -1,0 +1,55 @@
+﻿<Window x:Class="WPFFrameworkApp.GenMusicApp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFFrameworkApp"
+        mc:Ignorable="d" Background="#424242" Icon="/Images/Genmusic.png"
+        Title="GenMusicApp" Height="297" Width="444">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="150" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" Grid.ColumnSpan="2" Background="Black" Foreground="White">
+            <MenuItem Header="Audio" Background="Black">
+                <MenuItem Header="Add Audio" Background="Black" Click="AddAudio">
+                    <MenuItem.Icon>
+                        <Image Source="/MusicImages/soundadd.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Move Audio" Background="Black">
+                    <MenuItem.Icon>
+                        <Image Source="/NoteImages/move.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Copy Audio" Background="Black"/>
+                <MenuItem Header="Delete Audio" Background="Black" Click="DeleteAudio">
+                    <MenuItem.Icon>
+                        <Image Source="/MusicImages/sounddelete.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <ListBox x:Name="listbox" Grid.Row="1" Background="Black" BorderThickness="0" Foreground="White" Grid.RowSpan="3" Grid.ColumnSpan="2" SelectionChanged="ListBox_SelectionChanged"/>
+        <StackPanel x:Name="currentPanel" Grid.Row="1" Grid.Column="2" Visibility="Collapsed" Background="#3d2e26">
+            <Image Source="Images/Genmusic.png" Width="120" VerticalAlignment="Top"/>
+            <Label x:Name="currentMusic" Foreground="White" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel x:Name="musicPanel1" Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Visibility="Collapsed">
+            <Button x:Name="startButton" Content="start" Width="50" Background="#2e2e2e" Foreground="white" BorderThickness="0" Margin="0, 2, 10, 2" Click="PlayMusic"/>
+            <Button x:Name="stopButton" Content="stop" Width="50" Background="#2e2e2e" Foreground="white" BorderThickness="0" Margin="0, 2, 10, 2" Click="StopMusic"/>
+            <Button x:Name="restartButton" Content="Restart" Width="50" Background="#2e2e2e" Foreground="white" BorderThickness="0" Margin="0, 2, 0, 2" Click="RestartMusic"/>
+        </StackPanel>
+        <StackPanel x:Name="musicPanel2" Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Visibility="Collapsed">
+            <Button Content="Back" Width="50" Background="#2e2e2e" Foreground="white" BorderThickness="0" Margin="0, 2, 10, 2" Click="MusicBack"/>
+            <Button Content="Front" Width="50" Background="#2e2e2e" Foreground="white" BorderThickness="0"  Margin="0, 2, 0, 2" Click="MusicFront"/>
+        </StackPanel>
+    </Grid>
+</Window>

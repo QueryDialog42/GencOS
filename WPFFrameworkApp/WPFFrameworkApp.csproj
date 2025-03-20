@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C8BA5EFE-E29D-4FAD-B521-BF939F76E90A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WPFFrameworkApp</RootNamespace>
+    <AssemblyName>WPFFrameworkApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="GenMusicApp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InputDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GenMusicApp.xaml.cs">
+      <DependentUpon>GenMusicApp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InputDialog.xaml.cs">
+      <DependentUpon>InputDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="QueryDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RTFNote.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TrashBacket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TXTNote.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="QueryDialog.xaml.cs">
+      <DependentUpon>QueryDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RTFNote.xaml.cs">
+      <DependentUpon>RTFNote.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TrashBacket.xaml.cs">
+      <DependentUpon>TrashBacket.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TXTNote.xaml.cs">
+      <DependentUpon>TXTNote.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NoteAppLogics.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\textfile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="NoteImages\gennote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="NoteImages\Saveas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="NoteImages\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="NoteImages\move.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\newfolder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\folderdelete2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="NoteImages\noteopen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="NoteImages\notecopy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="NoteImages\notedelete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="NoteImages\noteadd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\question2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\warning1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\paperplane2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="NoteImages\fontitalic1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="NoteImages\fontunderline1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="NoteImages\fontbold1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="NoteImages\colors.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\rtffile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="NoteImages\fontup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="NoteImages\fontdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Genmusic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\trashempty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\trashfull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\sound128x128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\exepenguin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\folder2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\importfile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\soundwav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MusicImages\sounddelete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MusicImages\soundadd.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
